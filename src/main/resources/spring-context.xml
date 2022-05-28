@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="taskDao" class="com.malarg.testing_app.dao.DefaultTaskDao">
+        <constructor-arg name="filePath" value="tasks.csv"/>
+    </bean>
+
+    <bean id="personService" class="com.malarg.testing_app.service.DefaultTaskService">
+        <constructor-arg name="dao" ref="taskDao"/>
+    </bean>
+
+</beans>
